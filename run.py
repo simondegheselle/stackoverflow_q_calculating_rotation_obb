@@ -479,7 +479,7 @@ def simulate_rotation_and_validate_rotation_matrix(input_rot):
     transformation_matrix = transform_f()
     rotation_matrix = transformation_matrix[:3, :3]
 
-    degrees = Rotation.from_matrix(np.copy(rotation_matrix)).as_quat()
+    output = Rotation.from_matrix(np.copy(rotation_matrix)).as_quat()
     #Visualize if needed
 
     # source = transform_f.source
@@ -491,7 +491,7 @@ def simulate_rotation_and_validate_rotation_matrix(input_rot):
     # output = copy.deepcopy(box.inlier_cloud)
     # output.transform(transformation_matrix)
     # o3d.visualization.draw_geometries([source, target, cf, output])
-    return degrees
+    return output
 
 def quaternion_to_euler(q):
     """Convert a quaternion to Euler angles in degrees."""
