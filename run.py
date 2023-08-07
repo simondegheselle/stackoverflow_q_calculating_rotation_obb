@@ -445,16 +445,6 @@ class TranformOrientedBox:
 
 ### DEMO purposes
 def _generate_a_sample_top_plane_of_box(input_rot):
-    """Generate a sample top plane of a box for demonstration purposes.
-
-    Parameters:
-    - rot_x (float): Rotation angle around the x-axis (in degrees).
-    - rot_y (float): Rotation angle around the y-axis (in degrees).
-    - rot_z (float): Rotation angle around the z-axis (in degrees).
-
-    Returns:
-    - o3d.geometry.PointCloud: Sampled point cloud representing the top plane of the box.
-    """
     number_of_points_to_sample = 5000
 
     def generate_sample_box():
@@ -538,11 +528,7 @@ def test_simulate_rotation_and_validate_rotation_matrix(rot_x, rot_y, rot_z):
     # Test the function with different rotation angles
     
     input_quaternion = Rotation.from_euler('zyx', [rot_x, rot_y, rot_z], degrees=True).as_quat() # for some reason rotation sequence must be applied in this order, validated with open3d rotation in visualizer
-    calculated_quaternion = simulate_rotation_and_validate_rotation_matrix(input_quaternion)
-
-
-    # Convert calculated angles to quaternions
-    
+    calculated_quaternion = simulate_rotation_and_validate_rotation_matrix(input_quaternion)    
     calculated_angles = quaternion_to_euler(calculated_quaternion)
     calculated_angles[1] *= -1
     assert np.allclose(calculated_angles, [rot_x, rot_y, rot_z], atol=5), \
