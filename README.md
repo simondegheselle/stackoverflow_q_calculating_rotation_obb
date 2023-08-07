@@ -2,7 +2,7 @@
 
 I'm currently trying to compute the rotation angles around each axis in a 3D environment using Open3D. My initial approach was to use ICP (Iterative Closest Point) to find the transformation matrix for rotating a provided bounding box so it aligns with a reference bounding box. However, I believe this method might be an overkill for my goal.
 
-My main problem is that the default transformation matrix given by Open3D's bounding box always leads to inconsistent results. I'm hypothesizing that it's feasible to achieve the desired outcome using standard geometric calculations, by leveraging the normal of the plane.
+My main problem is that the default transformation matrix given by Open3D's bounding box leads to inconsistent results. I'm hypothesizing that it's feasible to achieve the desired outcome using standard geometric calculations, by leveraging the normal of the plane.
 
 I've also written some pytests to validate new methods. I'm looking for any alternative methods or guidance on how I can make this more straightforward and consistent.
 
