@@ -418,9 +418,6 @@ class TranformOrientedBox:
         source_down, source_fpfh = self._preprocess_point_cloud(self.source, voxel_size)
         target_down, target_fpfh = self._preprocess_point_cloud(self.target, voxel_size)
 
-        result = self._execute_global_registration(
-            source_down, target_down, source_fpfh, target_fpfh, voxel_size
-        )
         result = self._refine_registration(
             source_down,
             target_down,
