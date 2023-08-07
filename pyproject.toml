@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "o3d-level-bbox"
+version = "0.1.0"
+description = ""
+authors = ["Simon De Gheselle <simon@captic.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+loguru = "^0.7.0"
+scipy = "^1.11.1"
+pytest = "^7.4.0"
+open3d = {extras = ["all"], version = "^0.17.0"}
+scikit-learn = "^1.3.0"
+pyyaml = "^6.0.1"
+addict = "^2.4.0"
+pillow = "^10.0.0"
+pandas = "^2.0.3"
+tqdm = "^4.65.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
